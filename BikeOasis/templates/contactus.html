@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Send us your email</h3>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <h3>{{form.as_p}}</h3>
+            <br>
+            <input type="submit" value="Send">
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!-- register html page -->
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}REGISTER{% endblock title %}
+{% block stylesheet %}<link href="{% static 'register.css' %}" rel="stylesheet">{% endblock %}
+{% block content %}
+<!-- form -->
+<form class="reg" method="POST" action="">
+    {% csrf_token %}
+    <label><i class="fa fa-user" aria-hidden="true"></i>Name: <input type="text" name="name" placeholder="Enter your fullname"></label><br>
+    <label><i class="fa fa-envelope" aria-hidden="true"></i>Email: <input type="email" name="email" placeholder="Enter your email"></label><br>
+    <label><i class="fa fa-birthday-cake" aria-hidden="true"></i>Birthday: <input type="date" name="birthday"></label><br>
+    <label><i class="fa fa-phone-square" aria-hidden="true"></i>Phone Number: <input type="tel" name="phone" pattern="[0-9]{10}" placeholder="Enter your phone number"></label><br>
+    <label><i class="fa fa-key" aria-hidden="true"></i>Password: <input type="password" name="password" placeholder="Enter your password"></label><br>
+    <label><i class="fa fa-key" aria-hidden="true"></i>Confirm Password: <input type="password" name="confirm_password" placeholder="Re-enter your password"></label><br>
+    <input type="submit">
+</form>
+ {% endblock %} 

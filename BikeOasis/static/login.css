@@ -1,0 +1,59 @@
+body {
+  font-family: Arial, sans-serif;
+  background: url(images/index_bike.jpg) no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+}
+
+.login-container {
+  background-color: rgba(0, 0, 0, 0.579);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  width: 400px;
+  display: flex;
+  position: absolute;
+  margin-left: 150px;
+  margin-top: 150px;
+
+
+}
+
+.login-container label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.login-container input {
+  width: 340px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.login-container button {
+  margin-top: 20px;
+  margin-left: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-container a {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  color: #007bff;
+  text-decoration: none;
+  margin-left: 200px;
+}
+
+.login-container .fa {
+  margin-right: 5px;
+}

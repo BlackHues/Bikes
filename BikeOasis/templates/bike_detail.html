@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block stylesheet %}
+    <link href="{% static 'detail.css' %}" rel="stylesheet">  
+{% endblock %}
+{% block title %}{{ bike.name }}{% endblock title %}
+{% block content %}
+    <center><h1 class="name">{{ bike.name }}</h1></center>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="bike-details">
+                    <div class="bike-image">
+                        <img src="{{ bike.image.url }}" alt="{{ bike.name }}"> 
+                    </div>
+                    <div class="bike-description">
+                        <p>{{ bike.description }}</p>
+                    </div>  
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="bike-info">
+                    <div class="bike-data">
+                        <h4>{{ bike.make }}</h4>
+                        <h5>{{ bike.model }}</h5>
+                        <p><i class="fas fa-gear"></i> Engine: {{ bike.engine }}</p>
+                        <p><i class="fas fa-inr"></i> Price: {{ bike.price }}</p>
+                        <p><i class="fas fa-fan"></i> Max Torque: {{ bike.torque }}</p>
+                        <p><i class="fas fa-weight"></i> Weight: {{ bike.weight }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bike-chat">
+            <h2>Message Seller</h2>
+            <div class="chat-messages" id="chat-messages">
+                <!-- Display chat messages here -->
+            </div>
+            <form id="chat-form">
+                <input type="text" id="chat-message" placeholder="Type your message">
+                <button type="submit" class="btn btn-primary">Send</button>
+            </form>
+        </div>
+    </div>
+
+    
+    <div class="actions text-center">
+        <a href="{% url 'bike_edit' bike.pk %}" class="btn btn-primary">Edit Bike</a>
+        <form method="post" action="{% url 'delete_bike' bike_id=bike.id %}">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+        <a href="{% url 'bike_list' %}" class="btn btn-secondary">Back to List</a>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    const chatForm = document.getElementById("chat-form");
+    const chatMessage = document.getElementById("chat-message");
+    const chatMessages = document.getElementById("chat-messages");
+
+    // Function to add a new message to the chat
+    function appendMessage(sender, message) {
+        const messageElement = document.createElement("div");
+        messageElement.innerHTML = `<strong>${sender} :</strong> ${message}`;
+        chatMessages.appendChild(messageElement);
+    }
+
+    // Function to send a message via AJAX
+    function sendMessage(message) {
+        // Simulate sending the message (replace with actual AJAX call)
+        setTimeout(() => {
+            appendMessage("You", message);
+            // You can send the message to the server here for storage and further processing
+        }, 500);
+    }
+
+    chatForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const message = chatMessage.value.trim();
+        if (message !== "") {
+            sendMessage(message);
+            chatMessage.value = "";
+        }
+    });
+
+    // Simulate receiving a message (replace with actual AJAX polling or WebSocket)
+    setTimeout(() => {
+        appendMessage("Seller", "Hello! How can I help you?");
+    }, 1000);
+    setTimeout(() => {
+        appendMessage("Seller", "Greetings, Thanks for checking, we will contact you soon");
+    }, 10000);
+});
+
+    </script>
+{% endblock %}

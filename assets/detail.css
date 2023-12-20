@@ -1,0 +1,239 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+.name {
+    /* color: #a71d2a; */
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.9); 
+    font-family: Tahoma, sans-serif;
+    font-weight: bolder;
+    font-size: xx-large;
+    padding: 2px;
+}
+
+p {
+    margin-left: 20px;
+}
+
+
+.bike-details {
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
+    background-color: #ffffff;
+    color: rgb(22, 1, 1);
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    margin-bottom: 20px;
+    max-height: 1000px;
+    height: 700px;
+    font-weight: lighter;
+}
+
+
+.bike-details h1 {
+    border-bottom: 1px solid #000000;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+
+.bike-image img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+
+.bike-description {
+    padding: 20px;
+    max-width: 500px;
+    text-align: left;
+    font-weight: lighter;
+}
+
+
+
+.bike-info {
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+    margin: 20px 0px;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: fit-content;
+    margin-bottom: 20px;
+    height: 700px;
+    max-height: 1000px;
+    text-align: center;
+    font-size: small;
+    font-weight: bold;
+    /* color: black; */
+}
+
+
+.actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+
+.btn-primary,
+.btn-danger,
+.btn-secondary {
+    /* background-color: transparent;
+    color: #fff; */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn-primary {
+    background-color: #007bff;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+}
+
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-danger:hover {
+    background-color: #a71d2a;
+}
+
+.btn-secondary:hover {
+    background-color: #555d66;
+}
+
+.bike-data {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+.bike-data p {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.bike-data i {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+
+
+.bike-data i.fa-gear,
+.bike-data i.fa-inr,
+.bike-data i.fa-fan,
+.bike-data i.fa-weight {
+    color: #0056b3;
+}
+h4, h5 {
+    margin: auto;
+    color: #fff;
+    padding: 5px;
+}
+h5 {
+    color: red;
+    padding-bottom: 50px;
+}
+
+    .chat-container {
+        max-width: 500px;
+        margin: 0 auto;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+
+
+   
+   .bike-chat {
+    border: 1px solid white;
+    margin-right: 50px;
+    width: fit-content;
+    position: absolute;
+    right: 0;
+    top: 100px;
+    padding: 50px;
+   }
+
+    .chat-messages {
+        /* padding: 10px; */
+        overflow-y: scroll;
+        max-height: 300px;
+        color: blue;
+        margin-bottom: 5px;
+        max-width: 400px;
+    }
+
+    .chat-message {
+        margin: 5px 0;
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+
+    .your-message {
+        background-color: #007BFF;
+        color: #fff;
+        text-align: right;
+    }
+
+
+    .seller-message {
+        background-color: #28A745;
+        color: #fff;
+    }
+
+
+    .chat-input {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        background-color: #f0f0f0;
+    }
+
+    .chat-input input[type="text"] {
+        flex-grow: 1;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-right: 5px;
+    }
+
+    .chat-input button[type="submit"] {
+        background-color: #007BFF;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 5px 10px;
+        cursor: pointer;
+    }

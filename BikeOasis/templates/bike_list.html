@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block stylesheet %}
+<link href="{% static 'bikesview.css' %}" rel="stylesheet">
+{% endblock %}
+{% block content %}
+<div class="container">
+    <center><h1>Bike Collections</h1></center>
+    <div class="card-container">
+        {% for bike in bikes %}
+        <div class="card">
+            <h4>{{ bike.name }}</h4>
+            <img src="{{ bike.image.url }}" alt="{{ bike.name }}">
+            <p class="text">{{ bike.description }}</p>
+            <div class="text-center mt-3">
+                <button type="button" class="launch-modal-button" data-bs-toggle="modal" data-bs-target="#exampleModal{{ bike.pk }}">
+                    Contact Details
+                </button>
+                <a href="{% url 'bike_detail' bike.pk %}" class="bike-details-button">Bike Details</a>
+            </div>
+            <div class="modal fade" id="exampleModal{{ bike.pk }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 class="modal-title fs-5" id="exampleModalLabel">Seller Details</h2>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            {% for user_profile in profile %}
+                            {% if user_profile.user == bike.user %}
+                            <p class="contact-number">
+                                <i class="fas fa-user "></i> Name : {{ user_profile.name }}
+                            </p>
+                            <p class="contact-number">
+                                <i class="fas fa-phone"></i> Phone No : {{ user_profile.phone }}
+                            </p>
+                            <p class="contact-number">
+                                <i class="fas fa-envelope"></i> Email : {{ user_profile.user }}
+                            </p>
+                            {% endif %}
+                            {% endfor %}
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Back</button>
+                            <a class="btn btn-secondary" href="{% url 'send_message' %}" >Send Mail</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="text-center mt-4">
+        <a class="sell" href="{% url 'bike_new' %}">Sell here</a>
+    </div>
+</div>
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h3>About Bike Oasis</h3>
+                <p>Bike Oasis is your ultimate destination for all things bikes. Explore our wide range of Motorbikes, connect with fellow riders, and embark on exciting adventures on road and off-road</p>
+                <p>Contact us: contact@bikeoasis.com</p>
+            </div>
+            <div class="col-md-3">
+                <h3>Quick Links</h3>
+                <ul class="list-unstyled">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="#">Bike Catalog</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h3>Connect with Us</h3>
+                <ul class="list-unstyled">
+                    <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <p class="text-center">&copy; 2023 Bike Oasis. All rights reserved.</p>
+</footer>
+
+<!-- Include Bootstrap JS (you might need to adjust the path) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+{% endblock %}

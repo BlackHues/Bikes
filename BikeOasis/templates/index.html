@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}HOME{% endblock title %}
+
+{% block stylesheet %}<link href="{% static 'index.css' %}" rel="stylesheet">{% endblock %}
+
+{% block content %}
+
+<div class="intro">
+    <h1>Welcome to Bike Oasis {{ user.name }}</h1>
+    <h2>Your Ultimate Destination for Motorbike Sales</h2>
+    <p>Explore a wide range of premium motorbikes and find your perfect ride.</p>
+</div>
+
+<div class="container">
+    <div class="row">
+        <p class="one">“It wasn’t until I went to college and I got the first motorcycle that I understood the thrill of speed.” – Vin Diesel</p>
+        <p class="two">“I believe there are two periods in life, one for the bike, the other for becoming active on one’s work.” – Bernard Hinault</p>
+        <p class="three">“The joy of riding a motorcycle is out of this world. The thrill of riding in the hills and mountains is an opiate addiction.” – Avijeet Das</p>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h3>About Bike Oasis</h3>
+          <p>Bike Oasis is your ultimate destination for all things bikes. Explore our wide range of Motorbikes, connect with fellow riders, and embark on exciting adventures on road and.</p>
+          <p>Contact us: contact@bikeoasis.com</p>
+        </div>
+        <div class="col-md-3">
+          <h3>Quick Links</h3>
+          <ul class="list-unstyled">
+            <li><a href="/">Home</a></li>
+            <li><a href="/sports/">Bike Catalog</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h3>Connect with Us</h3>
+          <ul class="list-unstyled">
+            <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <p class="text-center">&copy; 2023 Bike Oasis. All rights reserved.</p>
+  </footer>
+{% endblock %}

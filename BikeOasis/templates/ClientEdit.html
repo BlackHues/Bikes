@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<center>
+<div class="body-container">
+<h1>Edit Applicant</h1>
+<form method="POST" action="{% url 'edit' client.id %}">
+
+    {% csrf_token %}
+    <label for="name">Name:</label>
+    <input type="text" name="name" value="{{ client.name }}" required><br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" name="email" value="{{ client.email }}" required><br><br>
+
+    <label for="birthday">Birthday:</label>
+    <input type="date" name="birthday" value="{{ client.birthday }}" required><br><br>
+
+    <label for="phone">Phone:</label>
+    <input type="number" name="phone" value="{{ client.phone }}" required><br><br>
+
+    <label for="password">Password:</label>
+    <input type="password" name="password" value="{{ client.password }}" required><br><br>
+
+    <input type="submit" value="Save">
+</form>
+</div>
+</center>
+{% endblock %}
